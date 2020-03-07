@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserForm should render correctly in "debug" mode 1`] = `
+<form>
+  <label>
+    First Name
+    <input
+      id="first_name"
+      name="first_name"
+      onChange={[Function]}
+      type="text"
+    />
+  </label>
+  <br />
+  <label>
+    Last Name
+    <input
+      name="last_name"
+      onChange={[Function]}
+      type="text"
+    />
+  </label>
+  <br />
+  <label>
+    Age
+    <input
+      name="age"
+      onChange={[Function]}
+      type="text"
+    />
+  </label>
+</form>
+`;

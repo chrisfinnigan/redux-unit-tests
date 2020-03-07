@@ -1,9 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
+import { Provider } from "react-redux";
+import { App } from "./App";
+import configureStore from "./store";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+  it("should render in debug mode", () => {
+    const tree = renderer
+      .create(
+        <Provider store={configureStore()}>
+          <App debug />
+        </Provider>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
